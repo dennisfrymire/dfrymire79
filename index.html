@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type= "text/css" href="style.css">
+    <title>The Ultimate Quantum Leap Quiz</title>
+</head>
+<header>
+    <img src="images/background-1.jpg">
+    <h1>The Ultimate Quantum Leap Quiz</h1>
+</header>
+<body>
+    <section class="rules-head">
+            <div class="sub-head">  
+                <h3> Test your knowledge of the sci-fi cult classic TV show, Quantum Leap.</h3>
+                <div class="rules-body">
+                    
+                    <b>The Rules:</b>
+                    <ul>
+
+                    </ul>
+                    <p>
+                    <li>The countdown clock starts when you hit <em>Activate the Accelerator</em>.</li> 
+                    <p>
+                    <li>You will have 30 seconds to answer the first question.</li> 
+                    <p>
+                    <li>Fifteen seconds will be added to the clock for every correct answer.</li>
+                    <p>
+                    <li>Fifteen seconds will be deducted from the clock for every incorrect answer.</li> 
+                    <p>
+                    <li>As you progress through the game, the questions get tougher!</li>
+                    <p>
+                    <li>Answer 25 correct questions, and you win the game.</li>
+                    <p>
+                    <li>If the timer hit zero, you lose the game.</li>
+                    <p>
+                    <li>Keep coming back to play! This quiz has over 100 randomly generated questions.</li>    
+           
+                    </p>
+                </div>
+        </div>
+    </section>
+    <div id="timer">
+            <span id="timer">
+                <span id="time">30</span>
+        </div>
+        <div id="judge">
+        </div>
+    
+    <button id="play-game">Activate the Accelerator</button>
+
+    <div id="display-question"></div>
+    
+    <form>
+        <input type="text" id="answer" placeholder="answer"/>
+        <input type="submit" id="button" value="Enter"/>
+    </form>
+    
+         
+                  </span>
+    </div>
+    
+</body>
+</html>
