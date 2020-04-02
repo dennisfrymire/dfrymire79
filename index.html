@@ -55,7 +55,7 @@
         <div id="kisses">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, vel ipsa quaerat repudiandae neque id et facilis quasi doloribus magnam adipisci aliquid hic maxime quibusdam corrupti minus molestiae, architecto distinctio.
         </div>
-            <button class="kisses-with-history" id="kisses-button">Kisses</button>
+            <button id="kisses-button">Begin Round 2 - Kisses With History</button>
     </section>
     <section class="game-end">
         <div id="end-game">
@@ -68,22 +68,18 @@
         <div id="judge"></div>
     
             <button id="play-game">Activate the Accelerator</button>
-            <audio id="leap-effect">
-            <source src="sounds/Quantum_Leap_Leap_Effect.mp3" type="audio/mpeg">
-            </audio>
-            <audio id="handlink-effect">
-            <source src="sounds/handlinkClick.mp3" type="audio/mpeg">
-            </audio>
-            <audio id="end-game-music">
-            <source src="sounds/season1adbumper.mp3" type="audio/mpeg">
-            </audio>
+        
 
         <div id="display-question"></div>
     
 
         <form id="easy">
-            <input type="text" class="modal-buttons" id="answer" placeholder="answer"/>
-            <input type="submit" class="modal-buttons" id="button" value="Enter"/>
+            <input type="text" class="modal-buttons" id="easy-answer" placeholder="answer"/>
+            <input type="submit" class="modal-buttons" id="easy-button" value="Enter"/>
+        </form>
+        <form id="kisses-input">
+                <input type="text" class="modal-buttons" id="kisses-input-answer" placeholder="answer"/>
+                <input type="submit" class="modal-buttons" id="kisses-input-button" value="Enter"/>
         </form>
         
     
@@ -92,8 +88,10 @@
             <span id="time">60</span>
     </div>
     <button class="modal-buttons" id="play-again">Play Again?</button>
-
     <button id="play-game">Activate the Accelerator</button>
+
+    <!-- AUDIO FILES -->
+
     <audio id="leap-effect">
     <source src="sounds/Quantum_Leap_Leap_Effect.mp3" type="audio/mpeg">
     </audio>

@@ -99,35 +99,43 @@ const novelsAndComicsQuestions = [
     {Question: `What third season episode was almost the final episode aired before a letter-writing campaign saved the series?`, Answer: `Runaway`}
 ];
 
-const removeAcceleratorButton = () => {
-    $('#play-game').fadeOut(1000);
-};
 
+// Removes Intro message and 'Why I'm Here' Button
 const removeIntro = () => {
     $('#ready').remove();
     $('#why-im-here').remove();
 };
 
+// Adds the Rules and 'Activate Accelerator' button
 const addRules = () => {
     $('#rules').css('display', 'block');
     $('#play-game').css('display', 'block');
 };
 
-const addAnswerBox = () => {
-    $('#answer').css('display', 'block');
-    $('#button').css('display', 'block');
-};
-
-const removeAnswerBox = () => {
-    $('#answer').css('display', 'none');
-    $('#button').css('display', 'none');
-}
-
+// Removes the Rules and the start of 'Round 1 - Easy Questions'
 const removeRules = () => {
     $('.rules-head').remove();
     $('.sub-head').remove();
 };
 
+// Removes 'Activate Accelerator Button' at the start of 'Round 1 - Easy Questions'
+const removeAcceleratorButton = () => {
+    $('#play-game').remove();
+};
+
+// Adds the answer box and button at the start of 'Round 1 - Easy Questions'
+const addEasyAnswerBox = () => {
+    $('#easy-answer').css('display', 'block');
+    $('#easy-button').css('display', 'block');
+};
+
+// Removes the answer box for end of Round 1 - Easy Questions
+const removeEasyAnswerBox = () => {
+    $('#easy-answer').css('display', 'none');
+    $('#easy-button').css('display', 'none');
+}
+
+// Adds 'Round 2 - Kisses with History' explanation and Round 2 Start button to DOM
 const kissesWithHistory = () => {
     $('#kisses').css('display', 'block');
     $('#kisses-button').css('display', 'block');
@@ -135,18 +143,21 @@ const kissesWithHistory = () => {
     console.log($wrongAnswers);
 }
 
-const endGameLose = () => {
-    $endGameLoseMessage = $('<div>');
-    $endGameLoseText = $('<h2>').text(`You missed ${$wrongAnswers} questions in the last round, and have lost the game. Your total score was ${$correctAnswers}. Try again and beat your score!`);
-    $endGameLoseMessage.append($endGameLoseText);
-    $('#end-game').append($endGameLoseMessage);
-    // const $playAgain = $('<button>').text('Try again');
-
+// Removes Round 2 - Kisses with History' explanation and Round 2 Start button from the DOM
+const removeKisses = () => {
+    $('#kisses').remove();
+    $('#kisses-button').remove();
 }
 
+// Adds 'Round 2 - Kisses with History' answer box and submit button
+const addKissesAnswerBox = () => {
+    $('#kisses-input-answer').css('display', 'block');
+    $('#kisses-input-button').css('display', 'block');
+};
+
+// Checks score after end of Easy Question round, and sends player on to Round 2 - Kisses with History if wrong answers < 3
 const checkArraysEasy = () => {
-    console.log('Is checkArraysEasy running?')
-    removeAnswerBox();
+    removeEasyAnswerBox();
     console.log($wrongAnswers);
     if ($wrongAnswers >= 3) {
         endGameLose();
@@ -156,7 +167,14 @@ const checkArraysEasy = () => {
     }
 };
 
+const endGameLose = () => {
+    $endGameLoseMessage = $('<div>');
+    $endGameLoseText = $('<h2>').text(`You missed ${$wrongAnswers} questions in the last round, and have lost the game. Your total score was ${$correctAnswers}. Try again and beat your score!`);
+    $endGameLoseMessage.append($endGameLoseText);
+    $('#end-game').append($endGameLoseMessage);
+    // const $playAgain = $('<button>').text('Try again');
 
+}
 
 // ==================================
 // AUDIO FILES
@@ -172,10 +190,18 @@ const handlinkEffect = () => {
 const endGameMusic = () => {
     $('audio#end-game-music')[0].play();
 }
+
+// =================
+// ANSWER INPUTS
+// =================
+
+// =====================
+// Easy Questions Input
+// =====================
  
 $('#easy').on('submit', (evt) => {
     evt.preventDefault();
-    let $answer = $('#answer').val();
+    let $answer = $('#easy-answer').val();
     if ($answer === easyQuestions[$random].Answer) {
         // console.log($answer);
         $correctMessage = $('<h3>').text('Correct!');
@@ -187,7 +213,7 @@ $('#easy').on('submit', (evt) => {
         $('#judge').append($correctMessage);
         $correctAnswers++;
         console.log($correctAnswers);
-        $answer = $('#answer').val('');
+        $answer = $('#easy-answer').val('');
         $correctMessage.fadeOut(1000);
         randEasyQGenerator();
     } else if ($answer !== easyQuestions[$random].Answer) {
@@ -205,8 +231,49 @@ $('#easy').on('submit', (evt) => {
     
 });
 
+// ==========================
+// Kisses With History Input
+// ==========================
+
+$('#kisses-input').on('submit', (evt) => {
+    evt.preventDefault();
+    let $answer = $('#kisses-input-answer').val();
+    if ($answer === kissesWithHistoryQuestions[$random].Answer) {
+        // console.log($answer);
+        $correctMessage = $('<h3>').text('Correct!');
+        $('#display-question').append($randQuestionDisplay);
+        // timer =+ 15;
+        kissesWithHistoryQuestions.splice($random, 1);
+        $randQuestionDisplay.remove();
+        $correctMessage = $('<h3>').text('Correct!');
+        $('#judge').append($correctMessage);
+        $correctAnswers++;
+        console.log($correctAnswers);
+        $answer = $('#kisses-input-answer').val('');
+        $correctMessage.fadeOut(1000);
+        randKissesQGenerator();
+    } else if ($answer !== kissesWithHistoryQuestions[$random].Answer) {
+        $randQuestionDisplay.remove();
+        $incorrectMessage = $('<h3>').text('Incorrect!').css('color', 'red');
+        $('#judge').append($incorrectMessage);
+        $wrongAnswers++;
+        console.log($wrongAnswers);
+        kissesWithHistoryQuestions.splice($random, 1);
+        console.log(kissesWithHistoryQuestions.length);
+        $answer = $('#kisses-input-answer').val('');
+        $incorrectMessage.fadeOut(1000);
+        randKissesQGenerator();
+    }
+    
+});
+
+////////////////////////////////////
+// Random Question Generator Arrays
+///////////////////////////////////
+
+// Round 1 - Easy Questions
 const randEasyQGenerator = () => {
-    // while loop will run through easy questions until they have all been answered,or score/timer drops to 0. Code for timer/score to be inserted.
+    // Runs through array 10 times, then exits back to check score
         
         if (easyQuestions.length > 0) {
         // random variable will generate number to determine randomly selected question
@@ -264,21 +331,45 @@ const theProject = () => {
 
 
 
-
-$('#why-im-here').on('click', addRules);
+// Removes intro message and places the rules of the game onto the DOM
 $('#why-im-here').on('click', removeIntro);
-$('#play-game').on('click', addAnswerBox);
-$('#play-game').on('click', randEasyQGenerator);
-$('#play-game').on('click', removeAcceleratorButton);
-$('#play-game').on('click', playLeapEffect); 
+$('#why-im-here').on('click', addRules);
+//
+
+// Removes Rules from the DOM
 $('#play-game').on('click', removeRules)
+
+// Removes 'Begin Round 1' from DOM
+$('#play-game').on('click', removeAcceleratorButton);
+
+// Begins random question generator for 'Round 1 - Easy Questions'
+$('#play-game').on('click', randEasyQGenerator);
+
+// Adds input field and submit button for 'Round 1'
+$('#play-game').on('click', addEasyAnswerBox);
+
+// Plays Leap Effect to start the game
+$('#play-game').on('click', playLeapEffect); 
+
 // $('#play-game').on('click', runTimer);
-$('#button').on('click', handlinkEffect);
+
+// Adds handlink effect to button click
+$('#easy-button').on('click', handlinkEffect);
+
+// Begins game over after player has lost (currently not attached)
 $('#play-again').on('click', randEasyQGenerator);
-$('#kisses').on('click', addAnswerBox);
-$('#kisses').on('click', playLeapEffect);
-$('#kisses').on('click', randKissesQGenerator);
 
+// Removes 'Round 2 - Kisses with History' explanation from the DOM
+$('#kisses-button').on('click', removeKisses);
 
+// Adds 'Round 2 - Kisses with History' input field and answer button to DOM
+
+$('#kisses-button').on('click', addKissesAnswerBox);
+
+// Plays leap effect to start the round
+$('#kisses-button').on('click', playLeapEffect);
+
+// Begins random question generator for 'Round 2 - Kisses with History'
+$('#kisses-button').on('click', randKissesQGenerator);
 
 });
