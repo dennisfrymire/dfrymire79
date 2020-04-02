@@ -19,6 +19,10 @@ h1 {
 
 }
 
+h3 {
+    font: 'Orbitron', sans-serif;
+}
+
 .subhead {
     font-family:'Orbitron', sans-serif;
     margin-left: auto;
@@ -36,7 +40,24 @@ h1 {
     font: white;
 }
 
-.rules-body {
+#ready {
+     /* background-color: lightyellow; */
+     font-family: 'Roboto', sans-serif;
+     font-size: 25px;
+     color: white;
+     text-align: center;
+     width: 500px;
+     height: 200px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 50px;
+     margin: auto;
+     margin: top;
+     padding: 10px;
+     display: block;
+ }
+
+#rules {
     font-family: 'Roboto', sans-serif;
     font-size: xx-large;
     margin-left: auto;
@@ -44,6 +65,71 @@ h1 {
     height: auto;
     text-align: center;
     font: white;
+    display: none;
+}
+
+#kisses {
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    text-align: center;
+    font: white;
+    display: none;
+    }
+
+#end-game {
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    text-align: center;
+    font: white;
+    display: none;
+    z-index: 5;
+}
+
+#kisses-button {
+    box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+    background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
+    background-color:#6686bd;
+    border-radius:22px;
+    border:2px solid #4e6096;
+    display:block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    padding:8px 37px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: none;
+}
+
+#why-im-here {
+    box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
+	background-color:#6686bd;
+	border-radius:22px;
+	border:2px solid #4e6096;
+	display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:8px 37px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+
 }
 
 body {
@@ -57,12 +143,16 @@ body {
 }
 
 #display-question {
-    background-color: lightyellow;
-    color: black;
+    /* background-color: lightyellow; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
     width: 500px;
-    height: 100px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
 
     margin: auto;
     margin: top;
@@ -72,26 +162,30 @@ body {
 
 #answer {
     display: block;
-    width: 250px;
-    height: 50px;
+    width: 200px;
+    height: 25px;
     background-color: lightyellow;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: none;
     
 }
 
 #judge {
     display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    text-align: center;
     width: 250px;
-    height: 50px;
-    background-color: lightyellow;
-    color: black;
+    height: 25px;
+    /* background-color: lightyellow; */
+    color: rgb(81, 124, 195);
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 70px;
 }
 
 #play-game {
@@ -112,6 +206,7 @@ body {
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: none;
 }
 
 #play-game:hover {
@@ -141,6 +236,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    display: none;
 
 }
 .Button:hover {
@@ -168,7 +264,29 @@ body {
     /* margin-left: 80%;
     margin-right: 80%; */
     font-size: 60px;
-    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
     text-align: center;
     padding: 20px;
+    display: none;
   }
+
+  #play-again {
+    box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
+	background-color:#6686bd;
+	border-radius:22px;
+	border:2px solid #4e6096;
+	display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:8px 37px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: none;
+}

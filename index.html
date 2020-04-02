@@ -20,54 +20,89 @@
 </header>
 <body>
     <section class="rules-head">
-            <div class="sub-head">  
-                <h3> Test your knowledge of the sci-fi cult classic TV show, Quantum Leap.</h3>
-                <div class="rules-body">
-                    
+            <div class="sub-head" id="ready">  
+                <h2> Are you ready to test your knowledge of the sci-fi cult classic TV show,
+                <br>
+                <em>Quantum Leap?</em></h2>
+                <button id="why-im-here">I think that's why I'm here.</button>
+            </div>
+            <div class="rules-body">
+                <div class="sub-head" id="rules"> 
                     <b>The Rules:</b>
                     <ul>
-
+        
+                        <li>The countdown clock starts when you hit <em>Activate the Accelerator</em>.</li> 
+                        <p>
+                        <li>You will have 30 seconds to answer the first question.</li> 
+                        <p>
+                        <li>Fifteen seconds will be added to the clock for every correct answer.</li>
+                        <p>
+                        <li>Fifteen seconds will be deducted from the clock for every incorrect answer.</li> 
+                        <p>
+                        <li>As you progress through the game, the questions get tougher!</li>
+                        <p>
+                        <li>Answer 25 correct questions, and you win the game.</li>
+                        <p>
+                        <li>If the timer hit zero, you lose the game.</li>
+                        <p>
+                        <li>Keep coming back to play! This quiz has over 100 randomly generated questions.</li>    
                     </ul>
-                    <p>
-                    <li>The countdown clock starts when you hit <em>Activate the Accelerator</em>.</li> 
-                    <p>
-                    <li>You will have 30 seconds to answer the first question.</li> 
-                    <p>
-                    <li>Fifteen seconds will be added to the clock for every correct answer.</li>
-                    <p>
-                    <li>Fifteen seconds will be deducted from the clock for every incorrect answer.</li> 
-                    <p>
-                    <li>As you progress through the game, the questions get tougher!</li>
-                    <p>
-                    <li>Answer 25 correct questions, and you win the game.</li>
-                    <p>
-                    <li>If the timer hit zero, you lose the game.</li>
-                    <p>
-                    <li>Keep coming back to play! This quiz has over 100 randomly generated questions.</li>    
-           
-                    </p>
+                    
                 </div>
         </div>
     </section>
-    <div id="timer">
-            <span id="timer">
-                <span id="time">30</span>
+    <section class="kisses with history">
+        <div id="kisses">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, vel ipsa quaerat repudiandae neque id et facilis quasi doloribus magnam adipisci aliquid hic maxime quibusdam corrupti minus molestiae, architecto distinctio.
         </div>
-        <div id="judge">
+            <button class="kisses-with-history" id="kisses-button">Kisses</button>
+    </section>
+    <section class="game-end">
+        <div id="end-game">
         </div>
+    </section>
+        
+        
     
-    <button id="play-game">Activate the Accelerator</button>
+    
+        <div id="judge"></div>
+    
+            <button id="play-game">Activate the Accelerator</button>
+            <audio id="leap-effect">
+            <source src="sounds/Quantum_Leap_Leap_Effect.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="handlink-effect">
+            <source src="sounds/handlinkClick.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="end-game-music">
+            <source src="sounds/season1adbumper.mp3" type="audio/mpeg">
+            </audio>
 
-    <div id="display-question"></div>
+        <div id="display-question"></div>
     
-    <form>
-        <input type="text" id="answer" placeholder="answer"/>
-        <input type="submit" id="button" value="Enter"/>
-    </form>
+
+        <form id="easy">
+            <input type="text" class="modal-buttons" id="answer" placeholder="answer"/>
+            <input type="submit" class="modal-buttons" id="button" value="Enter"/>
+        </form>
+        
     
-         
-                  </span>
+    <div id="timer">
+        <span id="timer">
+            <span id="time">60</span>
     </div>
+    <button class="modal-buttons" id="play-again">Play Again?</button>
+
+    <button id="play-game">Activate the Accelerator</button>
+    <audio id="leap-effect">
+    <source src="sounds/Quantum_Leap_Leap_Effect.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="handlink-effect">
+    <source src="sounds/handlinkClick.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="end-game-music">
+    <source src="sounds/season1adbumper.mp3" type="audio/mpeg">
+    </audio>
     
 </body>
 </html>
