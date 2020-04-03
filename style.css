@@ -21,9 +21,10 @@ h1 {
 
 h3 {
     font: 'Orbitron', sans-serif;
+    text-align: center;
 }
 
-.subhead {
+.sub-head {
     font-family:'Orbitron', sans-serif;
     margin-left: auto;
     margin-right: auto;
@@ -40,23 +41,6 @@ h3 {
     font: white;
 }
 
-#ready {
-     /* background-color: lightyellow; */
-     font-family: 'Roboto', sans-serif;
-     font-size: 25px;
-     color: white;
-     text-align: center;
-     width: 500px;
-     height: 200px;
-     margin-left: auto;
-     margin-right: auto;
-     margin-bottom: 50px;
-     margin: auto;
-     margin: top;
-     padding: 10px;
-     display: block;
- }
-
 #rules {
     font-family: 'Roboto', sans-serif;
     font-size: xx-large;
@@ -68,7 +52,7 @@ h3 {
     display: none;
 }
 
-#kisses {
+#kisses, #episode, #the-project, #novels-and-comics {
     font-family: 'Roboto', sans-serif;
     font-size: xx-large;
     margin-left: auto;
@@ -79,19 +63,7 @@ h3 {
     display: none;
     }
 
-#end-game {
-    font-family: 'Roboto', sans-serif;
-    font-size: xx-large;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    text-align: center;
-    font: white;
-    display: none;
-    z-index: 5;
-}
-
-#kisses-button {
+#kisses-button, #episode-button, #the-project-button, #novels-and-comics-button {
     box-shadow:inset 0px 1px 0px 0px #9fb4f2;
     background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
     background-color:#6686bd;
@@ -111,6 +83,23 @@ h3 {
     display: none;
 }
 
+#ready {
+    /* background-color: lightyellow; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin: auto;
+    margin: top;
+    padding: 10px;
+    display: block;
+}
+
 #why-im-here {
     box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
@@ -128,8 +117,6 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-
-
 }
 
 body {
@@ -157,67 +144,6 @@ body {
     margin: auto;
     margin: top;
     padding: 10px;
-
-}
-
-#easy-answer {
-    display: block;
-    width: 200px;
-    height: 25px;
-    background-color: lightyellow;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: none;
-    
-}
-
-#kisses-input-answer {
-    display: block;
-    width: 200px;
-    height: 25px;
-    background-color: lightyellow;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: none;
-}
-
-#kisses-input-button {
-box-shadow:inset 0px 1px 0px 0px #9fb4f2;
-background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
-background-color:#6686bd;
-border-radius:22px;
-border:2px solid #4e6096;
-display:block;
-cursor:pointer;
-color:#ffffff;
-font-family:Arial;
-font-size:13px;
-padding:8px 37px;
-text-decoration:none;
-text-shadow:0px 1px 0px #283966;
-margin-left: auto;
-margin-right: auto;
-margin-top: 20px;
-display: none;
-}
-
-#judge {
-    display: block;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 50px;
-    text-align: center;
-    width: 250px;
-    height: 25px;
-    /* background-color: lightyellow; */
-    color: rgb(81, 124, 195);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 70px;
 }
 
 #play-game {
@@ -251,13 +177,28 @@ display: none;
 
 }
 
+#judge {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    width: 250px;
+    height: 25px;
+    /* background-color: lightyellow; */
+    color: rgb(81, 124, 195);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
 #easy-button {
     box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
 	background-color:#6686bd;
 	border-radius:22px;
 	border:2px solid #5068af;
-	display:block;
+	/* display:block; */
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
@@ -269,7 +210,69 @@ display: none;
     margin-right: auto;
     margin-top: 20px;
     display: none;
+}
 
+/* #easy-answer, #kisses-input-answer, #episode-input-answer, #the-project-input-answer {
+    width: 200px;
+    height: 25px;
+    background-color: lightyellow;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+    
+} */
+
+#easy-button, #kisses-input-button, #episode-input-button, #the-project-input-button, #novels-and-comics-input-button {
+    box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
+	background-color:#6686bd;
+	border-radius:22px;
+	border:2px solid #5068af;
+	/* display:block; */
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:8px 37px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: none;
+}
+
+/* #kisses-input-button {
+    box-shadow:inset 0px 1px 0px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
+	background-color:#6686bd;
+	border-radius:22px;
+	border:2px solid #5068af;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:8px 37px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    display: none;
+} */
+
+#easy-answer, #kisses-input-answer, #episode-input-answer, #the-project-input-answer, #novels-and-comics-input-answer {
+    width: 200px;
+    height: 25px;
+    background-color: lightyellow;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+    
 }
 .Button:hover {
 	background:linear-gradient(to bottom, #476e9e 5%, #6686bd 100%);
@@ -302,13 +305,24 @@ display: none;
     display: none;
   }
 
-  #play-again {
+ #end-game {
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    text-align: center;
+    font: white;
+    display: none;
+    z-index: 5;
+}
+
+#play-again {
     box-shadow:inset 0px 1px 0px 0px #9fb4f2;
 	background:linear-gradient(to bottom, #6686bd 5%, #476e9e 100%);
 	background-color:#6686bd;
 	border-radius:22px;
 	border:2px solid #4e6096;
-	display:block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
@@ -322,3 +336,15 @@ display: none;
     margin-bottom: 20px;
     display: none;
 }
+
+/* #kisses-input-answer {
+    width: 200px;
+    height: 25px;
+    background-color: lightyellow;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+} */
+
